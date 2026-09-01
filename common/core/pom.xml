@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="
+            http://maven.apache.org/POM/4.0.0
+            https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <!-- ============================================================
+         Common Parent
+         ============================================================ -->
+
+    <parent>
+        <groupId>com.finstream</groupId>
+        <artifactId>common</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+
+    <!-- ============================================================
+         Common Core Library
+         ============================================================ -->
+
+    <artifactId>common-core</artifactId>
+
+    <packaging>jar</packaging>
+
+    <name>FinStream Common Core</name>
+
+    <description>
+        Dependency-light reusable FinStream platform library
+        containing shared contracts, DTOs, exceptions, enums,
+        validation components, constants and utilities.
+    </description>
+
+
+    <!-- ============================================================
+         Dependencies
+         ============================================================ -->
+
+    <dependencies>
+
+        <!-- ========================================================
+             Spring Context
+             ========================================================
+
+             Required only if common-core contains Spring-managed
+             components such as @Component, @Configuration, @Bean,
+             etc.
+        -->
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+
+        <!-- ========================================================
+             Spring Web
+             ========================================================
+
+             Required for shared REST-related classes such as
+             ResponseEntity, HttpStatus, WebExceptionHandler, etc.
+        -->
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+
+
+        <!-- ========================================================
+             Bean Validation
+             ======================================================== -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+
+        <!-- ========================================================
+             Jackson
+             ========================================================
+
+             Useful for shared JSON DTOs, serializers,
+             deserializers and JSON utilities.
+        -->
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+
+        <!-- ========================================================
+             Lombok
+             ======================================================== -->
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+
+        <!-- ========================================================
+             Testing
+             ======================================================== -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>

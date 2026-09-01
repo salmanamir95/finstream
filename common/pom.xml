@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="
+            http://maven.apache.org/POM/4.0.0
+            https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <!-- ============================================================
+         FinStream Root Parent
+         ============================================================ -->
+
+    <parent>
+        <groupId>com.finstream</groupId>
+        <artifactId>finstream</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+
+    <!-- ============================================================
+         Common Module
+         ============================================================ -->
+
+    <artifactId>common</artifactId>
+
+    <packaging>pom</packaging>
+
+    <name>FinStream Common</name>
+
+    <description>
+        FinStream common modules containing reusable libraries,
+        shared Java classes, configurations, validation rules,
+        exceptions, utilities and cross-service components.
+    </description>
+
+
+    <!-- ============================================================
+         Common Submodules
+         ============================================================ -->
+
+    <modules>
+
+        <!--
+            Reusable Java library consumed by FinStream
+            microservices such as account, customer,
+            transaction, payment, etc.
+        -->
+        <module>core</module>
+
+    </modules>
+
+</project>
