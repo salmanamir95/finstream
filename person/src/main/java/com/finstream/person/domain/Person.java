@@ -1,4 +1,4 @@
-package main.java.com.finstream.person.domain;
+package com.finstream.person.domain;
 
 public class Person {
 

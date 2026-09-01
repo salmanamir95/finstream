@@ -1,4 +1,4 @@
-package main.java.com.finstream.person.domain.customer.businessCustomer;
+package com.finstream.person.domain.customer.businessCustomer;
 
 public class MedBusinessCustomer extends BusinessCustomer {
 
