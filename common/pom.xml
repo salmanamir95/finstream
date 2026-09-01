@@ -8,11 +8,6 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-
-    <!-- ============================================================
-         FinStream Root Parent
-         ============================================================ -->
-
     <parent>
         <groupId>com.finstream</groupId>
         <artifactId>finstream</artifactId>
@@ -20,37 +15,14 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-
-    <!-- ============================================================
-         Common Module
-         ============================================================ -->
-
     <artifactId>common</artifactId>
-
     <packaging>pom</packaging>
 
     <name>FinStream Common</name>
-
-    <description>
-        FinStream common modules containing reusable libraries,
-        shared Java classes, configurations, validation rules,
-        exceptions, utilities and cross-service components.
-    </description>
-
-
-    <!-- ============================================================
-         Common Submodules
-         ============================================================ -->
+    <description>FinStream shared modules.</description>
 
     <modules>
-
-        <!--
-            Reusable Java library consumed by FinStream
-            microservices such as account, customer,
-            transaction, payment, etc.
-        -->
         <module>core</module>
-
     </modules>
 
 </project>

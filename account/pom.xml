@@ -8,37 +8,12 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-
-    <!-- ============================================================
-         FinStream Root Parent
-         
-         account is an independent microservice.
-         It does NOT inherit from common.
-
-         Inheritance:
-         
-         Spring Boot Parent
-                │
-                ▼
-         FinStream Root
-                │
-                ├── common
-                │    └── core
-                │
-                └── account
-         ============================================================ -->
-
     <parent>
         <groupId>com.finstream</groupId>
         <artifactId>finstream</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-
-
-    <!-- ============================================================
-         Account Microservice
-         ============================================================ -->
 
     <artifactId>account</artifactId>
 
@@ -52,115 +27,65 @@
         savings accounts and account-related operations.
     </description>
 
-
-    <!-- ============================================================
-         Dependencies
-         ============================================================ -->
-
     <dependencies>
 
-
-        <!-- ========================================================
-             FinStream Common Core
-             
-             Shared contracts, DTOs, exceptions, enums,
-             validation components and utilities.
-             
-             Version is inherited from the root dependencyManagement.
-             ======================================================== -->
-
+        <!-- FinStream shared library -->
         <dependency>
             <groupId>com.finstream</groupId>
             <artifactId>common-core</artifactId>
         </dependency>
 
-
-        <!-- ========================================================
-             Spring Web / REST API
-             ======================================================== -->
-
+        <!-- REST API -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-
-        <!-- ========================================================
-             Spring Data JPA / Hibernate
-             ======================================================== -->
-
+        <!-- JPA / Hibernate -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-
-        <!-- ========================================================
-             PostgreSQL
-             ======================================================== -->
-
+        <!-- PostgreSQL -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
 
-
-        <!-- ========================================================
-             Bean Validation
-             ======================================================== -->
-
+        <!-- Bean Validation -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
-
-        <!-- ========================================================
-             Lombok
-             ======================================================== -->
-
+        <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
 
-
-        <!-- ========================================================
-             Spring Boot Actuator
-             ======================================================== -->
-
+        <!-- Actuator -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-
-        <!-- ========================================================
-             Swagger / OpenAPI
-             ======================================================== -->
-
+        <!-- OpenAPI / Swagger -->
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
         </dependency>
 
-
-        <!-- ========================================================
-             MapStruct
-             ======================================================== -->
-
+        <!-- MapStruct -->
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
         </dependency>
 
-
-        <!-- ========================================================
-             Testing
-             ======================================================== -->
-
+        <!-- Tests -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -169,18 +94,8 @@
 
     </dependencies>
 
-
-    <!-- ============================================================
-         Build
-         ============================================================ -->
-
     <build>
-
         <plugins>
-
-            <!-- ====================================================
-                 Spring Boot Maven Plugin
-                 ==================================================== -->
 
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -188,7 +103,6 @@
             </plugin>
 
         </plugins>
-
     </build>
 
 </project>
