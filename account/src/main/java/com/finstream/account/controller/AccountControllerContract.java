@@ -2,22 +2,21 @@ package com.finstream.account.controller;
 
 import java.util.List;
 
-import org.springframework.http.ResponseEntity;
-
 import com.finstream.account.inputsAndDTOs.AccountDTO;
 import com.finstream.account.inputsAndDTOs.AccountInput;
+import com.finstream.common.response.GenericResponse;
 
 public interface AccountControllerContract<
         D extends AccountDTO,
         I extends AccountInput> {
 
-    ResponseEntity<D> create(I input);
+    GenericResponse<D> create(I input);
 
-    ResponseEntity<D> getById(Long id);
+    GenericResponse<D> getById(Long id);
 
-    ResponseEntity<List<D>> getAll();
+    GenericResponse<List<D>> getAll();
 
-    ResponseEntity<D> update(Long id, I input);
+    GenericResponse<D> update(Long id, I input);
 
-    ResponseEntity<Void> delete(Long id);
+    GenericResponse<Void> delete(Long id);
 }

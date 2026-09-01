@@ -2,14 +2,22 @@ package com.finstream.account.controller;
 
 import java.util.List;
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.finstream.account.inputsAndDTOs.AccountDTO;
 import com.finstream.account.inputsAndDTOs.AccountInput;
 import com.finstream.account.service.AccountServiceContract;
+import com.finstream.common.response.GenericResponse;
 
-public abstract class AbstractAccountController<D extends AccountDTO, I extends AccountInput> {
+public abstract class AbstractAccountController<
+        D extends AccountDTO,
+        I extends AccountInput>
+        implements AccountControllerContract<D, I> {
 
     protected final AccountServiceContract<?, I, D> service;
 
@@ -19,45 +27,55 @@ public abstract class AbstractAccountController<D extends AccountDTO, I extends 
         this.service = service;
     }
 
+    @Override
     @PostMapping
-    public ResponseEntity<D> create(
+    public GenericResponse<D> create(
             @RequestBody I input) {
 
-        return ResponseEntity.ok(
-                service.create(input));
+        return GenericResponse.success(
+                service.create(input),
+                "Account created successfully");
     }
 
+    @Override
     @GetMapping("/{id}")
-    public ResponseEntity<D> getById(
+    public GenericResponse<D> getById(
             @PathVariable Long id) {
 
-        return ResponseEntity.ok(
-                service.getById(id));
+        return GenericResponse.success(
+                service.getById(id),
+                "Account retrieved successfully");
     }
 
+    @Override
     @GetMapping
-    public ResponseEntity<List<D>> getAll() {
+    public GenericResponse<List<D>> getAll() {
 
-        return ResponseEntity.ok(
-                service.getAll());
+        return GenericResponse.success(
+                service.getAll(),
+                "Accounts retrieved successfully");
     }
 
+    @Override
     @PutMapping("/{id}")
-    public ResponseEntity<D> update(
+    public GenericResponse<D> update(
             @PathVariable Long id,
             @RequestBody I input) {
 
-        return ResponseEntity.ok(
-                service.update(id, input));
+        return GenericResponse.success(
+                service.update(id, input),
+                "Account updated successfully");
     }
 
+    @Override
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(
+    public GenericResponse<Void> delete(
             @PathVariable Long id) {
 
         service.delete(id);
 
-        return ResponseEntity.noContent().build();
+        return GenericResponse.success(
+                null,
+                "Account deleted successfully");
     }
-
 }
