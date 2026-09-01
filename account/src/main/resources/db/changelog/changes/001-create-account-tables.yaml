@@ -1,0 +1,88 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 001-create-account-table
+      author: salman
+
+      changes:
+        - createTable:
+            tableName: account
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: customer_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: account_number
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+                    unique: true
+
+              - column:
+                  name: status
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 002-create-current-account-table
+      author: salman
+
+      changes:
+        - createTable:
+            tableName: current_account
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: overdraft_limit
+                  type: DECIMAL(19,2)
+
+        - addForeignKeyConstraint:
+            baseTableName: current_account
+            baseColumnNames: id
+            referencedTableName: account
+            referencedColumnNames: id
+            constraintName: fk_current_account_account
+
+  - changeSet:
+      id: 003-create-savings-account-table
+      author: salman
+
+      changes:
+        - createTable:
+            tableName: savings_account
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: interest_rate
+                  type: DECIMAL(5,2)
+
+        - addForeignKeyConstraint:
+            baseTableName: savings_account
+            baseColumnNames: id
+            referencedTableName: account
+            referencedColumnNames: id
+            constraintName: fk_savings_account_account

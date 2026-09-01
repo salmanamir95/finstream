@@ -1,0 +1,3 @@
+# Coding standards
+
+Use lower-case packages, noun DTO/request/response names, verb-led service methods, and singular repositories. Prefer constructor injection, explicit validation annotations, `BigDecimal` for money/rates, typed domain exceptions, `@Transactional` at application-service use cases, and `@Version` for concurrent aggregates. Keep controllers thin and entities off the public API. Use MapStruct with explicit unmapped-field policies. Lombok should not obscure domain invariants. Log outcomes, not secrets. JavaDoc public contracts and non-obvious financial rules; avoid comments that repeat code.

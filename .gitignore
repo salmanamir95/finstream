@@ -1,0 +1,132 @@
+# ============================================================
+
+# Java / Maven
+
+# ============================================================
+
+# Maven build output
+
+**/target/
+
+# Maven wrapper generated files
+
+**/.mvn/timing.properties
+
+# Compiled Java classes
+
+**/*.class
+
+# ============================================================
+
+# Spring Boot / Application Configuration
+
+# ============================================================
+
+# Local application configuration
+
+**/application.yaml
+**/application.yml
+**/application.properties
+
+# Profile-specific local configuration
+
+**/application-*.yaml
+**/application-*.yml
+**/application-*.properties
+
+# ============================================================
+
+# Environment / Secrets
+
+# ============================================================
+
+**/.env
+**/.env.*
+**/*.env
+
+# Local secrets / credentials
+
+**/*secret*
+**/*secrets*
+**/*credentials*
+
+# ============================================================
+
+# IDEs
+
+# ============================================================
+
+# IntelliJ IDEA
+
+**/.idea/
+**/*.iml
+**/*.iws
+**/*.ipr
+
+# Eclipse
+
+**/.classpath
+**/.project
+**/.settings/
+
+# VS Code
+
+**/.vscode/
+
+# NetBeans
+
+**/nbproject/private/
+**/nbbuild/
+**/dist/
+**/.nb-gradle/
+
+# ============================================================
+
+# OS generated files
+
+# ============================================================
+
+.DS_Store
+**/.DS_Store
+
+Thumbs.db
+**/Thumbs.db
+
+# ============================================================
+
+# Logs
+
+# ============================================================
+
+**/*.log
+**/logs/
+
+# ============================================================
+
+# Temporary files
+
+# ============================================================
+
+**/*.tmp
+**/*.temp
+**/*.swp
+**/*.swo
+**/*~
+
+# ============================================================
+
+# Generated / Local Files
+
+# ============================================================
+
+**/generated/
+**/.cache/
+
+# ============================================================
+
+# Docker local overrides
+
+# ============================================================
+
+**/docker-compose.override.yml
+**/docker-compose.override.yaml
