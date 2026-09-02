@@ -13,8 +13,19 @@ import lombok.Setter;
 @Setter
 public class LargeBusinessCustomer extends BusinessCustomer {
 
-    private Integer employeeCount;
+    private Integer numberOfBranches;
 
-    private Long annualRevenue;
+    private Integer numberOfSubsidiaries;
 
+    private String chiefExecutiveName;
+
+    private String chiefFinancialOfficer;
+
+    private String corporateGroupName;
+
+    private Boolean publiclyListed;
+
+    private String stockExchange;
+
+    private Boolean auditedFinancials;
 }

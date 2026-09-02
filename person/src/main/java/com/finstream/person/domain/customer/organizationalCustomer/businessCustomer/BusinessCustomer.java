@@ -1,12 +1,18 @@
 package com.finstream.person.domain.customer.organizationalCustomer.businessCustomer;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
+import com.finstream.person.business.BusinessSector;
+import com.finstream.person.business.BusinessStructure;
 import com.finstream.person.domain.customer.organizationalCustomer.OrganizationalCustomer;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Table;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,24 +23,21 @@ import lombok.Setter;
 @Setter
 public abstract class BusinessCustomer extends OrganizationalCustomer {
 
-    private String businessRegistrationNumber;
-
     private String taxIdentificationNumber;
-
-    private Integer employeeCount;
 
     private BigDecimal annualRevenue;
 
     private String industry;
 
-    private String businessSector;
+    @Enumerated(EnumType.STRING)
+    private BusinessSector businessSector;
 
-    private String website;
+    @Enumerated(EnumType.STRING)
+    private BusinessStructure businessStructure;
 
     private String businessDescription;
 
-    private String headquartersAddress;
+    private String primaryCountryOfOperation;
 
-    private String countryOfOperation;
-
+    private LocalDate operatingSince;
 }

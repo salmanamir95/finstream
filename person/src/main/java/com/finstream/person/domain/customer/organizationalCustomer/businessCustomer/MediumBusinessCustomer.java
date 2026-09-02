@@ -1,6 +1,5 @@
-package com.finstream.person.domain.customer.organizational.business;
+package com.finstream.person.domain.customer.organizationalCustomer.businessCustomer;
 
-import java.math.BigDecimal;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
@@ -16,7 +15,13 @@ import lombok.Setter;
 @Setter
 public class MediumBusinessCustomer extends BusinessCustomer {
 
-    private Integer employeeCount;
+    private Integer numberOfBranches;
 
-    private BigDecimal annualRevenue;
+    private Integer numberOfDepartments;
+
+    private String chiefExecutiveName;
+
+    private String financeManagerName;
+
+    private Boolean auditedFinancials;
 }
