@@ -11,7 +11,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-
+    
 @Entity
 @Table(name = "individual_customers")
 @DiscriminatorValue("INDIVIDUAL")
