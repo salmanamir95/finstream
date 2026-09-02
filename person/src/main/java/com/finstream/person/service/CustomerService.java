@@ -11,16 +11,9 @@ import org.springframework.stereotype.Service;
 public class CustomerService {
 
     private final CustomerRepository<Customer> repository;
-    
 
     public CustomerService(CustomerRepository<Customer> repository) {
         this.repository = repository;
-    }
-
-    public CustomerDto createCustomer(CustomerInputDto input) {
-        // Customer-level fields only
-        // implementation will depend on how we map the abstract Customer
-        return null;
     }
 
     public CustomerDto getCustomer(Long customerId) {
@@ -31,23 +24,25 @@ public class CustomerService {
                         )
                 );
 
-        return null;
+        return mapToDto(customer);
     }
 
-    public CustomerDto updateCustomer(
-            Long customerId,
+    public void updateCustomerFields(
+            Customer customer,
             CustomerInputDto input
     ) {
-        Customer customer = repository.findById(customerId)
-                .orElseThrow(() ->
-                        new RuntimeException(
-                                "Customer not found with id: " + customerId
-                        )
-                );
+        customer.setDisplayName(input.getDisplayName());
+        customer.setRegistrationChannel(input.getRegistrationChannel());
+        customer.setRegistrationBranchCode(input.getRegistrationBranchCode());
+        customer.setEmail(input.getEmail());
+        customer.setPhoneNumber(input.getPhoneNumber());
+        customer.setCountry(input.getCountry());
+        customer.setCity(input.getCity());
+        customer.setAddress(input.getAddress());
+    }
 
-        // Update Customer-level fields only
-
-        return null;
+    public Customer saveCustomer(Customer customer) {
+        return repository.save(customer);
     }
 
     public void deleteCustomer(Long customerId) {
@@ -59,5 +54,10 @@ public class CustomerService {
                 );
 
         repository.delete(customer);
+    }
+
+    private CustomerDto mapToDto(Customer customer) {
+        // We will handle polymorphic mapping separately.
+        return null;
     }
 }
