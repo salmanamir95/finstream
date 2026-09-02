@@ -1,34 +1,45 @@
 databaseChangeLog:
 
   - include:
-      file: db/changelog/001-create-customers.yaml
+      file: 001-create-customer-tables.yaml
+      relativeToChangelogFile: true
 
   - include:
-      file: db/changelog/002-create-individual-customers.yaml
+      file: 002-create-individual-customers.yaml
+      relativeToChangelogFile: true
 
   - include:
-      file: db/changelog/003-create-organizational-customers.yaml
+      file: 003-create-organizational-customers.yaml
+      relativeToChangelogFile: true
 
   - include:
-      file: db/changelog/004-create-financial-institution-customers.yaml
+      file: 004-create-financial-institution-customers.yaml
+      relativeToChangelogFile: true
 
   - include:
-      file: db/changelog/005-create-government-customers.yaml
+      file: 005-create-government-customers.yaml
+      relativeToChangelogFile: true
 
   - include:
-      file: db/changelog/006-create-institutional-customers.yaml
+      file: 006-create-institutional-customers.yaml
+      relativeToChangelogFile: true
 
   - include:
-      file: db/changelog/007-create-non-profit-customers.yaml
+      file: 007-create-non-profit-customers.yaml
+      relativeToChangelogFile: true
 
   - include:
-      file: db/changelog/008-create-business-customers.yaml
+      file: 008-create-business-customers.yaml
+      relativeToChangelogFile: true
 
   - include:
-      file: db/changelog/009-create-large-business-customers.yaml
+      file: 009-create-large-business-customers.yaml
+      relativeToChangelogFile: true
 
   - include:
-      file: db/changelog/010-create-medium-business-customers.yaml
+      file: 010-create-medium-business-customers.yaml
+      relativeToChangelogFile: true
 
   - include:
-      file: db/changelog/011-create-small-business-customers.yaml
+      file: 011-create-small-business-customers.yaml
+      relativeToChangelogFile: true
