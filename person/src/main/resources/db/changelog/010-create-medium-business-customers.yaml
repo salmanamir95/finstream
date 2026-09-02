@@ -1,0 +1,45 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 010-create-medium-business-customers
+      author: finstream
+
+      changes:
+
+        - createTable:
+            tableName: medium_business_customers
+            columns:
+
+              - column:
+                  name: customer_id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: number_of_branches
+                  type: INTEGER
+
+              - column:
+                  name: number_of_departments
+                  type: INTEGER
+
+              - column:
+                  name: chief_executive_name
+                  type: VARCHAR(255)
+
+              - column:
+                  name: finance_manager_name
+                  type: VARCHAR(255)
+
+              - column:
+                  name: audited_financials
+                  type: BOOLEAN
+
+        - addForeignKeyConstraint:
+            baseTableName: medium_business_customers
+            baseColumnNames: customer_id
+            referencedTableName: business_customers
+            referencedColumnNames: customer_id
+            constraintName: fk_medium_business_customer_business

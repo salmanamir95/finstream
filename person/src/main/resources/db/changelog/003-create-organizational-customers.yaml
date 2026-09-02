@@ -1,0 +1,61 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 003-create-organizational-customers
+      author: finstream
+
+      changes:
+
+        - createTable:
+            tableName: organizational_customers
+            columns:
+
+              - column:
+                  name: customer_id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: legal_name
+                  type: VARCHAR(255)
+
+              - column:
+                  name: trading_name
+                  type: VARCHAR(255)
+
+              - column:
+                  name: registration_number
+                  type: VARCHAR(255)
+
+              - column:
+                  name: registration_country
+                  type: VARCHAR(255)
+
+              - column:
+                  name: incorporation_date
+                  type: DATE
+
+              - column:
+                  name: organization_website
+                  type: VARCHAR(255)
+
+              - column:
+                  name: primary_contact_name
+                  type: VARCHAR(255)
+
+              - column:
+                  name: primary_contact_phone
+                  type: VARCHAR(255)
+
+              - column:
+                  name: primary_contact_email
+                  type: VARCHAR(255)
+
+        - addForeignKeyConstraint:
+            baseTableName: organizational_customers
+            baseColumnNames: customer_id
+            referencedTableName: customers
+            referencedColumnNames: customer_id
+            constraintName: fk_organizational_customer_customer

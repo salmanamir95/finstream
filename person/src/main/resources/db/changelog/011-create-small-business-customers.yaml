@@ -1,0 +1,45 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 011-create-small-business-customers
+      author: finstream
+
+      changes:
+
+        - createTable:
+            tableName: small_business_customers
+            columns:
+
+              - column:
+                  name: customer_id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: owner_name
+                  type: VARCHAR(255)
+
+              - column:
+                  name: owner_national_id
+                  type: VARCHAR(255)
+
+              - column:
+                  name: owner_managed
+                  type: BOOLEAN
+
+              - column:
+                  name: business_license_number
+                  type: VARCHAR(255)
+
+              - column:
+                  name: primary_product_or_service
+                  type: VARCHAR(255)
+
+        - addForeignKeyConstraint:
+            baseTableName: small_business_customers
+            baseColumnNames: customer_id
+            referencedTableName: business_customers
+            referencedColumnNames: customer_id
+            constraintName: fk_small_business_customer_business

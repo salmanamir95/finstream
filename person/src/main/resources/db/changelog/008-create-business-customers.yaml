@@ -1,0 +1,57 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 008-create-business-customers
+      author: finstream
+
+      changes:
+
+        - createTable:
+            tableName: business_customers
+            columns:
+
+              - column:
+                  name: customer_id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: tax_identification_number
+                  type: VARCHAR(255)
+
+              - column:
+                  name: annual_revenue
+                  type: NUMERIC(19,2)
+
+              - column:
+                  name: industry
+                  type: VARCHAR(255)
+
+              - column:
+                  name: business_sector
+                  type: VARCHAR(255)
+
+              - column:
+                  name: business_structure
+                  type: VARCHAR(255)
+
+              - column:
+                  name: business_description
+                  type: VARCHAR(255)
+
+              - column:
+                  name: primary_country_of_operation
+                  type: VARCHAR(255)
+
+              - column:
+                  name: operating_since
+                  type: DATE
+
+        - addForeignKeyConstraint:
+            baseTableName: business_customers
+            baseColumnNames: customer_id
+            referencedTableName: organizational_customers
+            referencedColumnNames: customer_id
+            constraintName: fk_business_customer_organizational

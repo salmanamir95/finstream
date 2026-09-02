@@ -1,0 +1,61 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 004-create-financial-institution-customers
+      author: finstream
+
+      changes:
+
+        - createTable:
+            tableName: financial_institution_customers
+            columns:
+
+              - column:
+                  name: customer_id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: financial_institution_type
+                  type: VARCHAR(255)
+
+              - column:
+                  name: license_number
+                  type: VARCHAR(255)
+
+              - column:
+                  name: regulatory_authority
+                  type: VARCHAR(255)
+
+              - column:
+                  name: license_country
+                  type: VARCHAR(255)
+
+              - column:
+                  name: swift_code
+                  type: VARCHAR(255)
+
+              - column:
+                  name: bic_code
+                  type: VARCHAR(255)
+
+              - column:
+                  name: head_office_address
+                  type: VARCHAR(255)
+
+              - column:
+                  name: branch_count
+                  type: INTEGER
+
+              - column:
+                  name: internationally_operating
+                  type: BOOLEAN
+
+        - addForeignKeyConstraint:
+            baseTableName: financial_institution_customers
+            baseColumnNames: customer_id
+            referencedTableName: organizational_customers
+            referencedColumnNames: customer_id
+            constraintName: fk_financial_institution_customer_organizational

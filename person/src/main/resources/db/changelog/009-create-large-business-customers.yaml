@@ -1,0 +1,57 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 009-create-large-business-customers
+      author: finstream
+
+      changes:
+
+        - createTable:
+            tableName: large_business_customers
+            columns:
+
+              - column:
+                  name: customer_id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: number_of_branches
+                  type: INTEGER
+
+              - column:
+                  name: number_of_subsidiaries
+                  type: INTEGER
+
+              - column:
+                  name: chief_executive_name
+                  type: VARCHAR(255)
+
+              - column:
+                  name: chief_financial_officer
+                  type: VARCHAR(255)
+
+              - column:
+                  name: corporate_group_name
+                  type: VARCHAR(255)
+
+              - column:
+                  name: publicly_listed
+                  type: BOOLEAN
+
+              - column:
+                  name: stock_exchange
+                  type: VARCHAR(255)
+
+              - column:
+                  name: audited_financials
+                  type: BOOLEAN
+
+        - addForeignKeyConstraint:
+            baseTableName: large_business_customers
+            baseColumnNames: customer_id
+            referencedTableName: business_customers
+            referencedColumnNames: customer_id
+            constraintName: fk_large_business_customer_business

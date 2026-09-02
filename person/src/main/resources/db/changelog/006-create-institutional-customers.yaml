@@ -1,0 +1,53 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 006-create-institutional-customers
+      author: finstream
+
+      changes:
+
+        - createTable:
+            tableName: institutional_customers
+            columns:
+
+              - column:
+                  name: customer_id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: institution_type
+                  type: VARCHAR(255)
+
+              - column:
+                  name: accreditation_number
+                  type: VARCHAR(255)
+
+              - column:
+                  name: accrediting_body
+                  type: VARCHAR(255)
+
+              - column:
+                  name: institution_code
+                  type: VARCHAR(255)
+
+              - column:
+                  name: governing_body
+                  type: VARCHAR(255)
+
+              - column:
+                  name: employee_count
+                  type: INTEGER
+
+              - column:
+                  name: student_or_member_count
+                  type: INTEGER
+
+        - addForeignKeyConstraint:
+            baseTableName: institutional_customers
+            baseColumnNames: customer_id
+            referencedTableName: organizational_customers
+            referencedColumnNames: customer_id
+            constraintName: fk_institutional_customer_organizational

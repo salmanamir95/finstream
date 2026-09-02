@@ -1,0 +1,45 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 005-create-government-customers
+      author: finstream
+
+      changes:
+
+        - createTable:
+            tableName: government_customers
+            columns:
+
+              - column:
+                  name: customer_id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: government_agency
+                  type: VARCHAR(255)
+
+              - column:
+                  name: government_id
+                  type: VARCHAR(255)
+
+              - column:
+                  name: government_level
+                  type: VARCHAR(255)
+
+              - column:
+                  name: department_name
+                  type: VARCHAR(255)
+
+              - column:
+                  name: jurisdiction
+                  type: VARCHAR(255)
+
+        - addForeignKeyConstraint:
+            baseTableName: government_customers
+            baseColumnNames: customer_id
+            referencedTableName: organizational_customers
+            referencedColumnNames: customer_id
+            constraintName: fk_government_customer_organizational

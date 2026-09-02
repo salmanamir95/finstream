@@ -1,0 +1,41 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 007-create-non-profit-customers
+      author: finstream
+
+      changes:
+
+        - createTable:
+            tableName: non_profit_customers
+            columns:
+
+              - column:
+                  name: customer_id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: non_profit_type
+                  type: VARCHAR(255)
+
+              - column:
+                  name: tax_exemption_number
+                  type: VARCHAR(255)
+
+              - column:
+                  name: registration_authority
+                  type: VARCHAR(255)
+
+              - column:
+                  name: mission_statement
+                  type: VARCHAR(255)
+
+        - addForeignKeyConstraint:
+            baseTableName: non_profit_customers
+            baseColumnNames: customer_id
+            referencedTableName: organizational_customers
+            referencedColumnNames: customer_id
+            constraintName: fk_non_profit_customer_organizational

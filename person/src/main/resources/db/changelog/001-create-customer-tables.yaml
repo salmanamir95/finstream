@@ -1,0 +1,59 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 001-create-customers
+      author: finstream
+
+      changes:
+
+        - createTable:
+            tableName: customers
+            columns:
+
+              - column:
+                  name: customer_id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: display_name
+                  type: VARCHAR(255)
+
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+
+              - column:
+                  name: registration_channel
+                  type: VARCHAR(255)
+
+              - column:
+                  name: registration_branch_code
+                  type: VARCHAR(255)
+
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+
+              - column:
+                  name: phone_number
+                  type: VARCHAR(255)
+
+              - column:
+                  name: country
+                  type: VARCHAR(255)
+
+              - column:
+                  name: city
+                  type: VARCHAR(255)
+
+              - column:
+                  name: address
+                  type: VARCHAR(255)
+
+              - column:
+                  name: customer_type
+                  type: VARCHAR(31)
