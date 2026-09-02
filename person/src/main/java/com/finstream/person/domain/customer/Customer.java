@@ -54,4 +54,4 @@ public abstract class Customer {
     private String city;
 
     private String address;
-}
+}   
