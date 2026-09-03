@@ -6,7 +6,7 @@ import com.finstream.person.domain.customer.organizationalCustomer.Organizationa
 import com.finstream.person.repository.CustomerRepository;
 
 @NoRepositoryBean
-public interface OrganizationalCustomerRepository<T extends OrganizationalCustomer>
-        extends CustomerRepository<T> {
+public interface OrganizationalCustomerRepository
+        extends CustomerRepository {
 
 }
