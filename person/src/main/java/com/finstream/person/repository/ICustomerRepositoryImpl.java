@@ -20,7 +20,7 @@ import java.util.Optional;
 public class ICustomerRepositoryImpl implements ICustomerRepository {
 
     @PersistenceContext
-    private EntityManager entityManager;
+    protected EntityManager entityManager;
 
     // ---------------------------------------------------------------
     // Single-result lookups
