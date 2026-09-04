@@ -1,5 +1,9 @@
 # FinStream — Event-Driven FinTech Transaction Platform
 
+> **Implementation status (verified 4 September 2026):** The repository currently implements the `account` REST service, a persistence-only `person` module, and the `common/core` response library. Transfers, balances, transaction or ledger processing, payments, fraud detection, notifications, analytics, outbox processing, Kafka producers/consumers, an API gateway, and authentication/authorization are not implemented.
+
+For the current code-backed architecture, API contract, local setup, and test status, start with [docs/README.md](docs/README.md). The event-driven platform described below is target/learning material unless marked as implemented in source.
+
 > A production-oriented FinTech backend built with **Java, Spring Boot, Apache Kafka, PostgreSQL, Drools, Novu, and Apache Pinot** to demonstrate event-driven architecture, reliable financial transaction processing, real-time fraud detection, notifications, and streaming analytics.
 
 ---

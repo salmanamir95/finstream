@@ -1,6 +1,6 @@
 # FinStream Maven and Common Library Architecture
 
-This is the authoritative build-architecture supplement for FinStream, assessed from the root, `common`, and `account` POMs on 1 September 2026. Labels distinguish **current** code from the **recommended** target.
+This is the authoritative build-architecture supplement for FinStream, assessed from the root, `common`, and `account` POMs on 4 September 2026. Labels distinguish **current** code from the **recommended** target.
 
 | Current finding | Result |
 |---|---|

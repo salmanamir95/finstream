@@ -2,7 +2,7 @@
 
 ## Current architecture — confirmed
 
-The Account service is a Spring Boot application on port 8080. Each subtype has an HTTP controller, a specialised service, a MapStruct mapper, and a Spring Data JPA repository. Both subtype entities share the `Account` base entity using JPA `JOINED` inheritance. PostgreSQL is the configured data store. Liquibase changelogs define the initial tables, although Hibernate `ddl-auto: update` is also enabled, creating a production risk.
+The repository is a Maven aggregator containing `common`, `account`, and `person`. The Account service is a Spring Boot application on port 8080. Each account subtype has an HTTP controller, a specialised service, a MapStruct mapper, and a Spring Data JPA repository. Both subtype entities share the `Account` base entity using JPA `JOINED` inheritance. PostgreSQL is the configured data store and Liquibase owns schema changes; Hibernate is configured with `ddl-auto: validate`.
 
 ```mermaid
 flowchart LR

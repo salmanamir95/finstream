@@ -1,4 +1,8 @@
-# 1. Final FinStream architecture
+# Proposed target architecture
+
+> This document is a design proposal, not a description of the current repository. The confirmed implementation is the Account REST service, the persistence-only Person module, and the shared Common library. The gateway, transaction, fraud, notification, analytics, and outbox components below do not exist in source yet.
+
+# 1. Target FinStream architecture
 
 ```text
                          ┌──────────────────────┐

@@ -1,8 +1,8 @@
 # Security architecture
 
-## Current
+## Current — confirmed
 
-No authentication, authorisation, TLS configuration, ownership checks, secrets manager, audit log, or rate limiting is evidenced. Database credentials appear in `application.yaml`; treat them as development defaults and rotate them if ever used beyond local development.
+No authentication, authorisation, TLS configuration, ownership checks, secrets manager, audit log, or rate limiting is evidenced. There is no Spring Security dependency or JWT/OIDC configuration. Database credentials appear in `application.yaml`; treat them as development defaults and rotate them if ever used beyond local development. The current API must not be exposed publicly.
 
 ## Recommended
 

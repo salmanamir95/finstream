@@ -8,11 +8,11 @@ All routes are **confirmed** from controller mappings. `AccountInput` contains o
 | API-002 | `GET /api/accounts/current/{id}` | Get current account | 200 + DTO |
 | API-003 | `GET /api/accounts/current` | List current accounts | 200 + array |
 | API-004 | `PUT /api/accounts/current/{id}` | Update shared input fields | 200 + DTO |
-| API-005 | `DELETE /api/accounts/current/{id}` | Delete current account | 204 |
+| API-005 | `DELETE /api/accounts/current/{id}` | Delete current account | 200 + wrapped response |
 | API-006 | `GET /api/accounts/current/{id}/overdraft-limit` | Read limit | 200 + number |
 | API-007 | `PATCH /api/accounts/current/{id}/overdraft-limit/increase?amount=` | Increase limit | 200 + DTO |
 | API-008 | `POST /api/accounts/savings` | Create savings account | 200 + DTO |
-| API-009 | `GET/PUT/DELETE /api/accounts/savings/{id}` | Get/update/delete savings account | 200/200/204 |
+| API-009 | `GET/PUT/DELETE /api/accounts/savings/{id}` | Get/update/delete savings account | 200 + wrapped response |
 | API-010 | `GET /api/accounts/savings` | List savings accounts | 200 + array |
 | API-011 | `GET /api/accounts/savings/{id}/interest-rate` | Read rate | 200 + number |
 | API-012 | `PATCH /api/accounts/savings/{id}/interest-rate?interestRate=` | Replace rate | 200 + DTO |

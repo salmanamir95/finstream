@@ -14,3 +14,5 @@
 | PATCH | `/api/accounts/savings/{id}/interest-rate?interestRate=…` | Update rate |
 
 Create/update JSON: `{"customerId":1001,"accountNumber":"ACC-10001"}`. Current responses include customer ID, account number, and overdraft limit; savings responses include the interest rate. API versioning/authentication are planned.
+
+All controller results are currently returned with the framework's default successful status unless otherwise specified; delete methods return a `GenericResponse` rather than an explicit `204 No Content`. The response DTOs do not include the persistence ID or account status. A missing account currently raises an unstructured runtime error, so error status and body are not a stable client contract.

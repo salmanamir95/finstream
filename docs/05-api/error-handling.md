@@ -1,8 +1,10 @@
 # Error handling
 
-Current code throws `RuntimeException` for not-found and lets framework/database errors escape. Exact response shape/status is not a stable documented contract.
+## Current — confirmed
 
-**Proposed error envelope:**
+Current code throws `RuntimeException` for not-found and lets framework/database errors escape. There is no visible `@ControllerAdvice`, so exact error response shape and status are not a stable documented contract. Do not build client logic around the proposed envelope below.
+
+## Proposed error envelope
 
 ```json
 {"timestamp":"2026-09-01T12:00:00Z","status":400,"error":"VALIDATION_ERROR","message":"Invalid request","path":"/api/v1/accounts/current","traceId":"…"}

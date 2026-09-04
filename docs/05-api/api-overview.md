@@ -1,6 +1,6 @@
 # API overview
 
-The implemented API is unversioned and runs on the configured service port (`8080` locally). It accepts JSON request bodies and returns JSON DTOs except for scalar specialised reads. No authentication or authorisation is implemented. Do not expose it publicly.
+The implemented API is unversioned and runs on port `8080` locally. It accepts JSON request bodies and returns `GenericResponse`-wrapped JSON DTOs; specialised read endpoints return scalar values. No authentication or authorisation is implemented. Do not expose it publicly. The Person service has no HTTP API yet.
 
 **Recommendation:** introduce `/api/v1` before external adoption. Version at the contract boundary, make compatible additions within a major version, deprecate with a published window, and avoid breaking field removal/semantic changes.
 
