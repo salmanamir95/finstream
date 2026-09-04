@@ -5,11 +5,14 @@ import com.finstream.person.business.BusinessSector;
 import com.finstream.person.business.BusinessStructure;
 import com.finstream.person.repository.organizational.IOrganizationalCustomerRepository;
 
+import org.springframework.data.repository.NoRepositoryBean;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+@NoRepositoryBean
 public interface IBusinessCustomerRepository extends IOrganizationalCustomerRepository {
 
     Optional<BusinessCustomer> findByTaxIdentificationNumber(String taxIdentificationNumber);

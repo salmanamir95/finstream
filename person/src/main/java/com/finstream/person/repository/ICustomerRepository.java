@@ -4,9 +4,12 @@ import com.finstream.person.domain.customer.Customer;
 import com.finstream.person.regChannel.RegistrationChannel;
 import com.finstream.person.status.CustomerStatus;
 
+import org.springframework.data.repository.NoRepositoryBean;
+
 import java.util.List;
 import java.util.Optional;
 
+@NoRepositoryBean
 public interface ICustomerRepository {
 
     Optional<Customer> findByEmail(String email);

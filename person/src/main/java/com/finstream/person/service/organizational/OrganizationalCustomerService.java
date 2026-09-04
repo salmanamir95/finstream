@@ -11,7 +11,6 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-@Service
 @Transactional(readOnly = true)
 public class OrganizationalCustomerService
         extends CustomerService {
